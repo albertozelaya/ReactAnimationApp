@@ -3,16 +3,25 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}", "./app/**/*.{js,jsx}", "./src/**/*.{js,jsx}"],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
+      fontFamily: {
+        assistant: ["Assistant", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,14 +56,30 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        BG_LIGHT: "#F3F5FA",
+        BG_DARK: "#ECEDF1",
+        DARKTHEME: "#0F172A",
+        BG_DARKER: "#E7E7E7",
+        RED_LIGHT: "#BA0C2F",
+        RED_DARK: "#A41F35",
+        RED_DARKER: "#8B2332",
+        TEXT_MUTED: "#AEAEAE",
+        TEXT_LIGHT: "#353E4A",
+        TEXT_DARK: "#232429",
+        WHITE: "#FFFFFF",
+        BLACK: "#000000",
+        BG_INPUT: "#FFFFFF",
+        BG_DISABLE: "#ADB5BD",
+        TEXT_DISABLE: "#F8F9FA",
+        NAV_TITLE: "#ADB5BD",
+        NAV_TITLE_ACTIVE: "#A41F35",
+        NAV_BACKGROUND: "color-mix(in srgb, lightgray 35%, #7A232E)",
+        NAV_BACKGROUND_ACTIVE: "#FFFFFF",
       },
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -72,5 +97,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-typography")],
 };

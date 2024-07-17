@@ -1,6 +1,7 @@
+import { ContainerMargin } from "../components/ContainerMargin"
 
 export const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <ContainerMargin/>
   )
 }

@@ -1,6 +1,8 @@
+import { heroDivisas, homeHero2, personalHero1 } from "../../public/assets";
 import { CarouselFrame } from "./CarouselFrame";
 
 export const ContainerMargin = () => {
+  
   return (
     <div>
       {/* <Header />
@@ -8,7 +10,8 @@ export const ContainerMargin = () => {
         <h1 className=" text-2xl">ContainerMargin siu</h1>
       </div> */}
       {/* <Carousel/> */}
-      <CarouselFrame />
+      <CarouselFrame/>
+      {/* <CarouselFrame/> */}
     </div>
   );
 };

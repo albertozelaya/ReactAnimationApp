@@ -73,6 +73,8 @@
 @layer base {
   * {
     @apply border-border;
+    @apply overflow-x-hidden;
+    @apply bg-BG_DISABLE;
   }
   body {
     @apply bg-background text-foreground;

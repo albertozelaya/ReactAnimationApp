@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { heroDivisas, homeHero1, homeHero2 } from "../../public/assets";
+import { heroDivisas, personalHero1, homeHero2 } from "../../public/assets";
 
 const slides = [
   { id: 1, url: heroDivisas, alt: "Image 1" },
-  { id: 2, url: homeHero1, alt: "Image 2" },
+  { id: 2, url: personalHero1, alt: "Image 2" },
   { id: 3, url: homeHero2, alt: "Image 3" },
 ];
 
@@ -12,15 +12,15 @@ const CarouselItem = ({ slide }) => (
     className="carousel-item"
     key={slide.id}
     animate={{
-      x: ["-100%", "0%"],
-      transition: {
-        ease: "linear",
-        duration: 10, // Adjust duration as needed
-        repeat: Infinity,
-      },
+      // x: ["-100%", "0%", "0%", "100%"],
+      // transition: {
+      //   ease: "linear",
+      //   duration: 6,
+      //   repeat: Infinity,
+      // },
     }}
   >
-    <img src={slide.url} alt={slide.alt} />
+    <img src={slide.url} alt={slide.alt} className="h-screen w-screen object-cover"/>
   </motion.div>
 );
 
